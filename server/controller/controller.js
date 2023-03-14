@@ -1,3 +1,4 @@
+const mongooseValidationErrorHandler = require('mongoose-validation-error-message-handler');
 var Userdb = require('../model/model');
 
 // create and save new user
@@ -21,9 +22,11 @@ exports.create = (req, res)=>{
     .save(user)
     .then(data =>{
         // res.send(data)
-        res.redirect('/add-user');
+        res.redirect('/');
     })
     .catch(err => {
+        const error = mongooseValidationErrorHandler(err);
+        console.log(error);
         res.status(500).send({
             message: err.message || "Some error has occured- On create user operation"
         });
