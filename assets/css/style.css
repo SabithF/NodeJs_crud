@@ -206,3 +206,21 @@ padding: .5em 0;
    background: #b4b4b4;
 
 }
+
+#update_user .form-group .btn,
+#add_user .form-group .btn{
+    width: 100%;
+    padding: .9em 1em;
+    background-color: #16db93;
+    border: none;
+    font-family: 'Trebuchet MS';
+    font-size: 1em;
+    cursor: border-radius .2em;
+    margin: .5em 0;
+
+}
+#update_user .form-group .btn:hover,
+#add_user .form-group .btn:hover{
+    background-color: var(--dark);
+    color: var(--border);
+}
